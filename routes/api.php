@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BookingController;
 /*
 |--------------------------------------------------------------------------
 | API
@@ -19,5 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/ping', fn () => ['ok' => true]);
 
 // TODO: POST /api/referrals/attach
+Route::post('/referrals/attach', [BookingController::class, 'attach']);
+Route::get('/referrals/my', [BookingController::class, 'my']);
+Route::get('/referrals/earnings', [BookingController::class, 'earnings']);
 // TODO: GET  /api/referrals/my
 // TODO: GET  /api/referrals/earnings
